@@ -1,0 +1,72 @@
+
+<div class="pokedex" *ngIf="!(this.loading$ | async)">
+    <section class="pokedex-list p-2 pb-sm-4"  *ngIf="(pokemon$ | async) as pokemon">
+        <h2 class="title">
+            {{pokemon.name}}
+            <span class="title-number">N.º&nbsp;{{(pokemon.id <10 ? '00': pokemon.id <100 ? '0' : '') + pokemon.id}}</span> 
+        </h2>
+        <div class="row m-0 pt-3">
+            <div class="col-12 col-md-6 pokemon-img">
+                <img class="img-fluid" 
+                src="{{'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/' + (pokemon.id <10 ? '00': pokemon.id <100 ? '0' : '') + (pokemon.id) + '.png'}}">
+            </div>
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                <div class="row m-0 pokemon-info">
+                    <div class="col-6">
+                        <span class="title">
+                            Altura<br>
+                            <span class="description">{{pokemon.height + ' m'}}</span>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                        <span class="title">
+                            Peso<br>
+                            <span class="description">{{pokemon.weight + ' kg'}}</span>
+                        </span>
+                    </div>
+                    <div class="col-12">
+                        <span class="title">Tipo</span>
+                        <div class="button-list">
+                            <p-button   *ngFor="let type of pokemon.types" 
+                                        label="{{type.type.name}}" 
+                                        severity="secondary"
+                                        class="p-2"  />
+                        </div>
+                    </div>
+                </div>
+                <div class="pokemon-attacks mt-4">
+                    <div class="col-6">
+                        <span class="title">Habilidades</span>
+                        <div class="button-list">
+                            <p-button   *ngFor="let ability of pokemon.abilities.slice(0, 3)" 
+                                        label="{{ability.ability.name}}" 
+                                        severity="help"
+                                        class="p-2" />
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="pokemon-attacks">
+                    <div class="col-6">
+                        <span class="title">Movimientos</span>
+                        <div class="button-list">
+                            <p-button   *ngFor="let move of pokemon.moves.slice(0, 3)" 
+                                        label="{{move.move.name}}" 
+                                        severity="info"
+                                        class="p-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="back-button">
+    <a class="nav-link" href="{{'/pokemon-list/'}}">
+        <p-button   label="Volver" 
+                    severity="contrast"
+                    class="p-2" 
+                    icon="pi pi-arrow-left"/>
+    </a>
+</div>

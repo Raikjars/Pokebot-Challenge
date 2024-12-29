@@ -1,0 +1,22 @@
+<div class="pokedex">
+    <section class="pokedex-list">
+        <div class="row m-0 p-4" style="height: auto;">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 pb-4 shake-vertical" 
+                 *ngFor="let pokemon of pokemons$ | async; index as i">
+                 <a class="nav-link" href="{{'/pokemon-details/' + (i+1)}}">
+                    <div class="pokemon-img">
+                        <span class="mb-1">
+                            <span class="number">N.º&nbsp;{{((i+1) <10 ? '00': (i+1) <100 ? '0' : '') + (i+1)}}</span>
+                        </span>
+                        <img class="img-fluid" 
+                             src="{{'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i+1) + '.png'}}">
+                    </div>
+                    
+                    <div class="pokemon-info">
+                        <h5 class="name">{{pokemon.name}}</h5>
+                    </div>
+                 </a>
+            </div>
+        </div>
+    </section>
+</div>

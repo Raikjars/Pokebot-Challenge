@@ -1,0 +1,99 @@
+<div *ngIf="showChatbot" >
+    <div class="chat-panel scale-in-ver-bottom"> 
+    <!------------CHAT SECTION START------------>
+      <!------------Chat navbar section start------------>
+      <div class="user-bar">
+          <div class="information-section">
+              <div class="bot-information">
+                  <div class="circle"><i class="pokemon-bot-icon"></i></div>
+                  <div class="name">
+                      PokeBot
+                  </div>
+              </div>
+          </div>
+          <div class="icon-section">
+              <i class="pi pi-times ellipsis-v option-icon" (click)="toggleChatButton()"></i>
+          </div>
+      </div>
+      <!------------Chat navbar section end------------>
+      <!------------body chat section start------------>
+      <div class="chat-body">
+            <div class="scroll-section" #sp>
+                <div class="summary"> <!------------summary of topic------------>
+                    <p>{{"¡Hola! \n\nPuedes preguntarme información sobre cualquiera de los 150 Pokemons de la primera generación"}}</p>
+                </div>
+                <!------------Messages Section start------------>
+                <div class="box-chat" *ngFor="let message of messages$ | async; index as i">
+                    <div *ngIf="!message.role.includes('developer')">
+                        <div class="user-details" [ngClass]="{'user-time': message.role == 'user', 'bot-time': message.role == 'assistant'}">
+                            <span class="date">{{'Enviado a las'}} {{formatDate(message.interaction_date) | date: 'h:mm a'}}</span>
+                            <div [ngClass]="{'user-information': message.role == 'user', 'bot-information': message.role == 'assistant'}">
+                                <span class="name">
+                                    {{message.role == 'user' ? "Tu" : "Bot"}}
+                                </span>
+                                <div class="circle" *ngIf="message.role == 'user'"><i class="pokemon-user-icon"></i></div>
+                                <div class="circle" *ngIf="message.role == 'assistant'"><i class="pokemon-bot-icon"></i></div>
+                            </div>
+                        </div>
+                        <div class="msg-section" [ngClass]="{'scale-in-center': message.animation}">
+                            <div [ngClass]="{'user-message-box': message.role == 'user', 'bot-message-box': message.role == 'assistant'}">
+                                <span>{{message.content}}</span> <!----Texto del mensaje---->
+                                
+                                <div *ngIf="message.pokemonList" class="buttons-list">
+                                    <a *ngFor="let item of message.pokemonList" 
+                                        class="nav-link" 
+                                        href="{{'/pokemon-details/'+ (item.id)}}">
+                                        <p-button   label="{{'Detalles de ' + item.name}}" 
+                                                    [text]="true" 
+                                                    [raised]="true" 
+                                                    severity="success"
+                                                    class="mt-3">
+                                        </p-button>
+                                    </a> 
+                                </div>
+                            </div>
+                            <div  [ngClass]="{'user-message-box': message.role == 'user', 'bot-message-box': message.role == 'assistant'}"
+                                *ngIf="(message.content == '...')">
+                                <div class="chat-loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!------------Messages Section end------------>
+          </div>
+          <!------------Input Question start------------>
+          <div class="input-section" [ngClass]="{'block-chat': (loadings$ | async)}">
+              <div class="message-textarea" [ngClass]="{'scroll-active': chatMessage.length > 140}">
+                  <textarea   [(ngModel)]="chatMessage"
+                              [ngStyle]="{'max-height': '140px'}"
+                              [autoResize]="true"
+                              [maxlength]="2000"
+                              [placeholder]="(loadings$ | async) ? 'Cargando Respuesta' : 'Escribe una pregunta...'"
+                              rows="1"
+                              cols="30"
+                              #chatInput
+                              class="chat-textarea"
+                              pTextarea
+                              appendTo="body"
+                              (keydown.enter)="onKeydown($event)"
+                              (keyup.enter)="chatMessage.length > 0 ? sendMessage() : ''"
+                              >
+                  </textarea>
+                  <span class="characters">{{chatMessage.length}} / 2000</span>
+              </div>
+              <div class="send-section">
+                  <i  class="pokemon-icon-message"
+                      (click)="chatMessage.length > 0 ? sendMessage() : ''">
+                  </i>
+              </div>
+  
+          </div>
+          <!------------Input Question end------------>
+      </div>
+      <!------------body chat section end------------>
+    <!------------CHAT SECTION END------------>
+    </div>
+</div>
+
+<!------------OPEN CHAT BUTTON------------>
+<button *ngIf="!showChatbot" class="open-button ring-effect-ph-circle-fill" (click)="toggleChatButton()"></button>

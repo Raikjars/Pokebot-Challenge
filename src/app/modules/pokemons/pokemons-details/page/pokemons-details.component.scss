@@ -1,0 +1,67 @@
+.pokedex{
+    background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    .pokedex-list {
+        background-color: #fff;
+        max-width: 1280px;
+        .title{
+            color: #212121;
+            text-transform: capitalize;
+            font-size: 36px;
+            margin-top: 0.5em;
+            text-align: center;
+            &-number{
+                color: #616161;
+            }
+        }
+        
+        .pokemon-img{
+            background-color: #F2F2F2;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .pokemon-info{
+            background-color: #30a7d7;
+            color: #fff;
+            border-radius: 10px;
+            padding: 16px;
+            .title{
+                color: #fff;
+                font-size: 24px;
+                white-space: normal;
+                text-align: start;
+            }
+            .description{
+                color: #212121;
+                font-size: 20px;
+                white-space: normal;
+                text-align: start;
+            }
+        }
+        
+        .pokemon-attacks{
+            .title{
+                font-size: 24px;
+                color: #212121;
+                text-align: start;
+            }
+        }
+
+        .button-list{
+            display: flex;
+            padding: 4px;
+        }
+        
+    }
+    
+}
+
+.back-button{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}

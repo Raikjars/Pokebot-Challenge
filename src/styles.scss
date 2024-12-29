@@ -1,0 +1,17 @@
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import "primeicons/primeicons.css";
+
+*{
+    font-family: "Montserrat Regular";
+}
+
+@font-face{
+    font-family: "Montserrat Regular";
+    src: url(./assets/fonts/Montserrat-Medium.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Montserrat Medium";
+    src: url(./assets/fonts/Montserrat-Medium.ttf) format("truetype");
+}

@@ -1,0 +1,99 @@
+.pokedex{
+    background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .pokedex-list {
+        background-color: #fff;
+        max-width: 1280px;
+        .pokemon-img{
+            background: #ffc93c;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            .number{
+                color: #717171;
+                font-size: 12px;
+                position: absolute;
+                font-weight: bold;
+                top: 4px;
+                left: 4px;
+            }
+        }
+        .pokemon-info{
+            margin-left: 12px;
+            .name{
+                color: #313131;
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
+        }
+        
+    }
+    
+}
+
+.shake-vertical:hover {
+    cursor: pointer;
+	-webkit-animation: shake-vertical 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+	        animation: shake-vertical 0.8s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+}
+
+ @-webkit-keyframes shake-vertical {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  @keyframes shake-vertical {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  
