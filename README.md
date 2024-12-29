@@ -2,58 +2,52 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
-## Development server
+## Instalación
+Nota importante: para instalarlo a través de npm/Yarn, necesita al menos Node.js 14 o superior.
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Paso 1
+Descargar el codigo del repositorio mediante github o git bash con el comando
 
 ```bash
-ng generate component component-name
+git clone https://github.com/Raikjars/Pokebot-Challenge.git
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+Paso 2
+Instalar las dependencias del proyecto con el comando
 ```bash
-ng generate --help
+  npm install
 ```
 
-## Building
-
-To build the project run:
-
+Paso 3
+Si es la primera vez que corres el proyecto debes iniciar el proyecto con el siguiente comando para que se genere el archivo **enviroment**. Ten en consideración que debes tener el archivo .env en la carpeta /enviroment para que se genere correctamente.
 ```bash
-ng build
+  npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Paso 4
+Si eres de Venezuela debes usar una vpn para que el chat pueda funcionar debido a que openAI esta bloqueado en dicha region. Para ejecutar el proyecto de forma local con una vpn activa se debe usar el comando.
 ```bash
-ng test
+  ng serve --host 0.0.0.0 --port 4200 
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+En caso contrario el proyecto puede correr con normalidad con el comando.
 ```bash
-ng e2e
+  ng serve --host 0.0.0.0 --port 4200 
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Una vez que el servidor esté en funcionamiento, abra su navegador y navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente cada vez que modifique alguno de los archivos fuente.
 
-## Additional Resources
+## Dependencias
+Las principales librerías utilizadas para el desarrollo de este proyecto son las siguientes:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+-	**Angular Cli**: El frontend de la aplicación esta desarrollado bajo el uso del framework Angular 19.0.6.
+-	**NodeJs**: Se utiliza **NodeJs** versión **14.15.4 LTS o superior** como ambiente de ejecución.
+-	**bootstrap, primeng y primeicons**: para reutilizar componentes, diseños, sistema de rejilla, iconos, etc.
+-	**dotenv**: empleado para manejar variables de entorno.
+- Se utiliza **HTML5, CSS3 y JavaScript (ECMAScript 5)** para el desarrollo de la aplicación web.
+- Se utilizo **PokeAPI** para obtener datos de prueba en las peticiones REST.
+- Se utilizo **OpenAI** para configurar el comportamiento del Chatbot.
+
+## Recursos adicionales
+
+Para obtener más información sobre el uso de la CLI de Angular, incluidas referencias de comandos detalladas, visita la página [Descripción general de la CLI de Angular y referencia de comandos (https://angular.dev/tools/cli).
