@@ -41,7 +41,7 @@
                                 
                                 <div *ngIf="message.pokemonList" class="buttons-list">
                                     <a *ngFor="let item of message.pokemonList" 
-                                        class="nav-link" 
+                                        class="nav-link p-2" 
                                         href="{{'/pokemon-details/'+ (item.id)}}">
                                         <p-button   label="{{'Detalles de ' + item.name}}" 
                                                     [text]="true" 
