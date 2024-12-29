@@ -2,8 +2,6 @@
 
 **Pokebot** Esta aplicación web te invita a explorar el mundo de los primeros 150 Pokémon de la generación original a través de una experiencia interactiva con un chatbot impulsado por OpenAI. ¡Sumérgete en conversaciones exclusivas sobre tus Pokémon favoritos! Cada vez que menciones o preguntes por un Pokémon, el chatbot generará un botón especial que te llevará a una descripción detallada del personaje, si deseas saber más. Tambien podras acceder a la lista completa de los 150 Pokémon y descubrir sus características y detalles a tu propio ritmo. ¡Es la herramienta perfecta para los fans de la nostalgia y los amantes de Pokémon!
 
-la gestión del proceso operativo de Distribuidoras de consumo masivo. Procesos tales como la planificacion, venta y entrega de mercancia, ademas de la gestion de inventario y clientes, tambien cuenta con metricas basadas en inteligencia artificial e inteligencia de negocios . Altamente personalizable y fácil de usar. Se adapta a muchas resoluciones de pantalla, desde pequeños dispositivos móviles hasta grandes computadoras de escritorio.
-
 ## Instalación
 Nota importante: para instalarlo a través de npm/Yarn, necesita al menos Node.js 14 o superior.
 
